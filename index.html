@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANDORA System | Dashboard Kampus</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="brand-logo">
+            <i class="fa-solid fa-cube brand-accent"></i> PANDORA
+        </a>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="#landing-home" style="color:var(--text-main); text-decoration:none;">Beranda</a>
+            <a href="#modules" style="color:var(--text-main); text-decoration:none;">Aplikasi</a>
+            <a href="#blog" style="color:var(--text-main); text-decoration:none;">Blog</a>
+
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle" style="
+                background: var(--glass-bg);
+                border: 1px solid var(--glass-border);
+                color: var(--text-main);
+                padding: 0.5rem;
+                border-radius: 50%;
+                cursor: pointer;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition-fast);
+            ">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="landing-home">
+        <div class="glass-panel"
+            style="padding: 1rem 2rem; margin-bottom: 2rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span style="width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%;"></span>
+            <span style="font-size: 0.9rem; font-weight: 500;">PANDORA Academic System</span>
+        </div>
+        <h1 class="hero-title">Pengolahan Administrasi Nilai & Olah Rekap Akademik</h1>
+        <p class="hero-subtitle">
+            Kelola data akademik, dosen, kurikulum, dan prestasi dalam satu pintu. Efisien, Cepat, dan Elegan.
+        </p>
+        <a href="#modules" style="
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 20px -5px var(--primary-glow);
+            transition: all 0.3s ease;
+        " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+            Mulai Akses
+        </a>
+    </section>
+
+    <!-- Modules Grid Section -->
+    <section class="modules-section" id="modules">
+        <h2 class="section-title">Navigasi PANDORA</h2>
+
+        <div class="grid-container" id="app-grid">
+            <!-- Items will be injected by JavaScript -->
+            <!-- Placeholder example to show layout while JS loads -->
+            <div class="glass-panel module-card">
+                <div class="module-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3 class="module-title">Memuat Aplikasi...</h3>
+                <p class="module-desc">Sinkronisasi dengan database sistem...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <h2 class="section-title">Berita & Informasi</h2>
+        <div class="blog-grid" id="blog-grid">
+            <!-- Blog items will be injected by JavaScript -->
+            <article class="glass-panel blog-card">
+                <div class="blog-image"
+                    style="background-image: url('https://source.unsplash.com/random/800x600/?university');"></div>
+                <div class="blog-content">
+                    <span class="blog-date">20 Des 2025</span>
+                    <h3 class="blog-title">Update Sistem Versi 1.0</h3>
+                    <p class="blog-excerpt">PANDORA resmi diluncurkan dengan fitur Jadwal Kuliah dan Database Mahasiswa
+                        terbaru.</p>
+                    <a href="#" class="read-more">Baca Selengkapnya →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PANDORA System by HALALKIRI. All rights reserved.</p>
+    </footer>
+
+    <!-- Core Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
