@@ -4,115 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PANDORA System | Dashboard Kampus</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="wrapper" id="wrapper">
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <a href="#" class="brand-logo">
-            <i class="fa-solid fa-cube brand-accent"></i> PANDORA
+    <!-- Main Header -->
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <span class="logo-mini"><i class="fa-solid fa-cube"></i></span>
+            <span class="logo-lg"><i class="fa-solid fa-cube"></i> PANDORA</span>
         </a>
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <a href="#landing-home" style="color:var(--text-main); text-decoration:none;">Beranda</a>
-            <a href="#modules" style="color:var(--text-main); text-decoration:none;">Aplikasi</a>
-            <a href="#blog" style="color:var(--text-main); text-decoration:none;">Blog</a>
 
-            <!-- Dark Mode Toggle -->
-            <button id="theme-toggle" style="
-                background: var(--glass-bg);
-                border: 1px solid var(--glass-border);
-                color: var(--text-main);
-                padding: 0.5rem;
-                border-radius: 50%;
-                cursor: pointer;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition-fast);
-            ">
-                <i class="fa-solid fa-moon"></i>
+        <!-- Header Navbar -->
+        <nav class="navbar">
+            <!-- Sidebar toggle button -->
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <i class="fa fa-bars"></i>
             </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="landing-home">
-        <div class="glass-panel"
-            style="padding: 1rem 2rem; margin-bottom: 2rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.5rem;">
-            <span style="width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%;"></span>
-            <span style="font-size: 0.9rem; font-weight: 500;">PANDORA Academic System</span>
-        </div>
-        <h1 class="hero-title">Pengolahan Administrasi Nilai & Olah Rekap Akademik</h1>
-        <p class="hero-subtitle">
-            Kelola data akademik, dosen, kurikulum, dan prestasi dalam satu pintu. Efisien, Cepat, dan Elegan.
-        </p>
-        <a href="#modules" style="
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 10px 20px -5px var(--primary-glow);
-            transition: all 0.3s ease;
-        " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            Mulai Akses
-        </a>
-    </section>
+            <!-- Navbar Right Menu -->
+            <ul class="navbar-nav">
+                <!-- Notifications -->
+                <li>
+                    <a href="#" title="Notifikasi">
+                        <i class="fa fa-bell-o"></i>
+                    </a>
+                </li>
+                <!-- Theme Toggle -->
+                <li>
+                    <button id="theme-toggle" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </li>
+                <!-- User Menu -->
+                <li class="user-menu">
+                    <a href="#">
+                        <img src="https://placehold.co/45x45/3c8dbc/ffffff?text=U" alt="User">
+                        <span>User</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Modules Grid Section -->
-    <section class="modules-section" id="modules">
-        <h2 class="section-title">Navigasi PANDORA</h2>
-
-        <div class="grid-container" id="app-grid">
-            <!-- Items will be injected by JavaScript -->
-            <!-- Placeholder example to show layout while JS loads -->
-            <div class="glass-panel module-card">
-                <div class="module-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h3 class="module-title">Memuat Aplikasi...</h3>
-                <p class="module-desc">Sinkronisasi dengan database sistem...</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog-section" id="blog">
-        <h2 class="section-title">Berita & Informasi</h2>
-        <div class="blog-grid" id="blog-grid">
-            <!-- Blog items will be injected by JavaScript -->
-            <article class="glass-panel blog-card">
-                <div class="blog-image"
-                    style="background-image: url('https://source.unsplash.com/random/800x600/?university');"></div>
-                <div class="blog-content">
-                    <span class="blog-date">20 Des 2025</span>
-                    <h3 class="blog-title">Update Sistem Versi 1.0</h3>
-                    <p class="blog-excerpt">PANDORA resmi diluncurkan dengan fitur Jadwal Kuliah dan Database Mahasiswa
-                        terbaru.</p>
-                    <a href="#" class="read-more">Baca Selengkapnya →</a>
+    <!-- Left Sidebar -->
+    <aside class="main-sidebar" id="main-sidebar">
+        <section class="sidebar">
+            <!-- User Panel -->
+            <div class="user-panel">
+                <img src="https://placehold.co/45x45/3c8dbc/ffffff?text=P" alt="User Image">
+                <div class="info">
+                    <p>PANDORA System</p>
+                    <span class="status"><i class="fa fa-circle"></i> Online</span>
                 </div>
-            </article>
-        </div>
-    </section>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu" id="sidebar-menu">
+                <li class="menu-label">MAIN NAVIGATION</li>
+                <li class="active">
+                    <a href="#dashboard">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <!-- Dynamic menu items will be injected here -->
+            </ul>
+
+            <!-- Apps Menu Label -->
+            <ul class="sidebar-menu" id="sidebar-apps">
+                <li class="menu-label">APLIKASI</li>
+                <!-- Apps will be rendered by JavaScript -->
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Content Header -->
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>PANDORA System v2.0</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <!-- Info Boxes -->
+            <div class="row" id="info-boxes">
+                <div class="col-md-3 col-sm-6">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Mahasiswa</span>
+                            <span class="info-box-number">1,250</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="fa fa-chalkboard-user"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Dosen</span>
+                            <span class="info-box-number">85</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="fa fa-book-open"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Mata Kuliah</span>
+                            <span class="info-box-number">156</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="info-box">
+                        <span class="info-box-icon bg-red"><i class="fa fa-trophy"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Prestasi</span>
+                            <span class="info-box-number">42</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modules Section -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title"><i class="fa fa-th-large"></i> Navigasi PANDORA</h3>
+                            <div class="box-tools">
+                                <button class="btn-box-tool" title="Minimize"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="modules-grid" id="app-grid">
+                                <!-- Modules will be injected by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <!-- Quick Stats -->
+                    <div class="box box-success">
+                        <div class="box-header">
+                            <h3 class="box-title"><i class="fa fa-chart-pie"></i> Statistik Cepat</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-blue"><i class="ion ion-ios-calendar-outline"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Jadwal Aktif</span>
+                                    <span class="info-box-number">24</span>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-people-outline"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">User Aktif</span>
+                                    <span class="info-box-number">156</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Info -->
+                    <div class="box box-warning">
+                        <div class="box-header">
+                            <h3 class="box-title"><i class="fa fa-info-circle"></i> Informasi Sistem</h3>
+                        </div>
+                        <div class="box-body">
+                            <p><strong>Versi:</strong> PANDORA 2.0</p>
+                            <p><strong>Status:</strong> <span style="color: var(--secondary);">● Online</span></p>
+                            <p><strong>Terakhir Update:</strong> 4 Jan 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Section -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <h3 class="box-title"><i class="fa fa-newspaper"></i> Berita & Informasi</h3>
+                            <div class="box-tools">
+                                <button class="btn-box-tool" title="Minimize"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="blog-grid" id="blog-grid">
+                                <!-- Blog items will be injected by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 PANDORA System by HALALKIRI. All rights reserved.</p>
+    <footer class="main-footer">
+        <div>
+            <strong>Copyright &copy; 2025 <a href="#">PANDORA System by HALALKIRI</a>.</strong> All rights reserved.
+        </div>
+        <div>
+            <b>Version</b> 2.0
+        </div>
     </footer>
 
-    <!-- Core Script -->
-    <script src="script.js"></script>
+</div>
+
+<!-- Core Script -->
+<script src="script.js"></script>
 </body>
 
 </html>
